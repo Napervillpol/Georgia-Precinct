@@ -66,8 +66,20 @@ def get_candidate(xpath,name):
     return df
 
 Warnock =[]
+
 Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Appling/115467/313148/reports/detailxml.zip",".//Choice[@key='2']",'Appling')) 
-Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Baker/115470/312544/reports/detailxml.zip",".//Choice[@key='2']",'Baker')) 
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Atkinson/115468/313060/reports/detailxml.zip",".//Choice[@key='2']",'Atkinson'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Bacon/115469/313083/reports/detailxml.zip",".//Choice[@key='2']",'Bacon'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Baker/115470/312544/reports/detailxml.zip",".//Choice[@key='2']",'Baker'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Baldwin/115471/313143/reports/detailxml.zip",".//Choice[@key='2']",'Baldwin'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Banks/115472/313336/reports/detailxml.zip",".//Choice[@key='2']",'Banks'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Barrow/115473/313176/reports/detailxml.zip",".//Choice[@key='2']",'Barrow'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Bartow/115474/312982/reports/detailxml.zip",".//Choice[@key='2']",'Bartow'))
+
+
+
+#Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Fulton/115526/313235/reports/detailxml.zip",".//Choice[@key='54']",'Fulton'))
+#Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/DeKalb/115510/313262/reports/detailxml.zip",".//Choice[@key='2']",'DeKalb'))  
 
 Warnock=pd.concat(Warnock)
 print(Warnock)
