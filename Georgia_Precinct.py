@@ -82,6 +82,13 @@ Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Bleckley/
 Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Brantley/115479/313211/reports/detailxml.zip",".//Choice[@key='2']",'Brantley'))
 Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Brooks/115480/312999/reports/detailxml.zip",".//Choice[@key='2']",'Brooks'))
 Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Bryan/115481/313138/reports/detailxml.zip",".//Choice[@key='2']",'Bryan'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Bulloch/115482/313241/reports/detailxml.zip",".//Choice[@key='2']",'Bulloch'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Burke/115483/312983/reports/detailxml.zip",".//Choice[@key='2']",'Burke'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Butts/115484/313669/reports/detailxml.zip",".//Choice[@key='2']",'Butts'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Calhoun/115485/313024/reports/detailxml.zip",".//Choice[@key='2']",'Calhoun'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Camden/115486/313152/reports/detailxml.zip",".//Choice[@key='2']",'Camden'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Candler/115487/313095/reports/detailxml.zip",".//Choice[@key='2']",'Candler'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Carroll/115488/312948/reports/detailxml.zip",".//Choice[@key='54']",'Carroll'))
 
 
 
