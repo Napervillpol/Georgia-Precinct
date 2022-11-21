@@ -126,6 +126,16 @@ Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Floyd/115
 Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Forsyth/115524/313319/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Forsyth'))
 Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Franklin/115525/313153/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Franklin'))
 Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Fulton/115526/313235/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Fulton'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Gilmer/115527/313111/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Gilmer'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Glascock/115528/312225/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Glascock'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Glynn/115529/313275/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Glynn'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Gordon/115530/313299/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Gordon'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Grady/115531/312782/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Grady'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Greene/115532/313104/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Greene'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Gwinnett/115533/313157/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Gwinnett'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Habersham/115534/314003/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Habersham'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Hall/115535/313325/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Hall'))
+
 
 
 
