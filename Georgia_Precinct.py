@@ -176,6 +176,19 @@ Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Newton/11
 Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Oconee/115574/313350/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Oconee'))
 Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Oglethorpe/115575/313205/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Oglethorpe'))
 Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Paulding/115576/313185/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Paulding'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Peach/115577/313412/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Peach'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Pickens/115578/313289/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Pickens'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Pierce/115579/312755/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Pierce'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Pike/115580/313062/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Pike'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Polk/115581/313253/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Polk'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Pulaski/115582/312711/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Pulaski'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Putnam/115583/312997/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Putnam'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Quitman/115584/313477/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Quitman'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Rabun/115585/313098/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Rabun'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Randolph/115586/312652/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Randolph'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Richmond/115587/313312/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Richmond'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Rockdale/115588/313006/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Rockdale'))
+
 
  
 
