@@ -106,6 +106,27 @@ Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Cook/1155
 Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Coweta/115504/313172/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Coweta'))
 Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Crawford/115505/313309/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Crawford'))
 Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Crisp/115506/313115/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Crisp'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Dade/115507/313147/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Dade'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Dawson/115508/313260/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Dawson'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Decatur/115509/313465/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Decatur'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/DeKalb/115510/313262/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'DeKalb'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Dodge/115511/313125/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Dodge'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Dooly/115512/313116/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Dooly'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Dougherty/115513/313180/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Dougherty'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Douglas/115514/313287/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Douglas'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Early/115515/313240/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Early'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Echols/115516/313126/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Echols'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Effingham/115517/313118/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Effingham'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Elbert/115518/313330/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Elbert'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Emanuel/115519/313280/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Emanuel'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Evans/115520/313493/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Evans'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Fannin/115521/312974/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Fannin'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Fayette/115522/313021/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Fayette'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Floyd/115523/313114/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Floyd'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Forsyth/115524/313319/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Forsyth'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Franklin/115525/313153/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Franklin'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Fulton/115526/313235/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Fulton'))
+
 
 
 
