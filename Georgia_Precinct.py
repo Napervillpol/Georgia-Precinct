@@ -178,23 +178,27 @@ def calculate_shift(df_2022,df_2020):
      df_2022.total.insert(8, "Pct Shift",df_2022.total["Margin"]-df_2020.total["Margin"])
      df_2022.total.insert(9, "Turnout",df_2022.total["Total"]/df_2020.total["Total"])
 
-def Statmodels(Previous_race,Current_race,Current_name,Title,w):
-    
-  
+def Statmodels(Previous_race,Current_race,Previous_name,Current_name,Title,w):
     
     plt.title(Title)
-    plt.xlabel("Warnock General Pct")
-    plt.ylabel("Warnock Runoff Pct")
+    plt.xlabel(Previous_name)
+    plt.ylabel(Current_name)
     print(Previous_race)
-    plt.scatter(Previous_race['Warnock Pct'],Current_race[Current_name],w)
+    plt.scatter(Previous_race[Previous_name],Current_race[Current_name],w)
    
-  
-
-    x = Previous_race['Warnock Pct']
-    y = Current_race['Warnock Pct']
-    z = w
-    
  
+    x = Previous_race[Previous_name]
+    y = Current_race[Current_name]
+    z = w
+   
+    x=x.dropna()
+    y=y.dropna()
+    z=z.loc[z != 0]
+    
+    print(x)
+    print(y)
+    print(z)
+
     wls_model = sm.WLS(y,x,z)
     results = wls_model.fit()
     
@@ -390,4 +394,4 @@ calculate_shift(Governor,Senate)
 
 write_to_excel(Governor,"Governor")
 
-Statmodels(Senate.total,Governor.total,"Warnock Pct","GA",1)
+Statmodels(Senate.total,Governor.total,"Warnock Pct","Abrams Pct","GA",Senate.total['Total']/1000)
