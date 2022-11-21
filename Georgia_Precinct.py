@@ -164,13 +164,20 @@ Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Madison/1
 Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Marion/115562/313370/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Marion'))
 Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/McDuffie/115563/312733/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'McDuffie'))
 Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/McIntosh/115564/313393/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'McIntosh'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Meriwether/115565/313212/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Meriwether'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Miller/115566/312527/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Miller'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Mitchell/115567/312509/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Mitchell'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Monroe/115568/312791/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Monroe'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Montgomery/115569/312808/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Montgomery'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Morgan/115570/313218/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Morgan'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Murray/115571/312962/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Murray'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Muscogee/115572/313372/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Muscogee'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Newton/115573/314019/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Newton'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Oconee/115574/313350/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Oconee'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Oglethorpe/115575/313205/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Oglethorpe'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Paulding/115576/313185/reports/detailxml.zip",".//Choice[@text='Raphael Warnock (I) (Dem)']",'Paulding'))
 
-
-
-
-
-#Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Fulton/115526/313235/reports/detailxml.zip",".//Choice[@key='54']",'Fulton'))
-#Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/DeKalb/115510/313262/reports/detailxml.zip",".//Choice[@key='2']",'DeKalb'))  
+ 
 
 Warnock=pd.concat(Warnock)
 print(Warnock)
