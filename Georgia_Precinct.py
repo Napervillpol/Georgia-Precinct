@@ -89,6 +89,17 @@ Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Calhoun/1
 Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Camden/115486/313152/reports/detailxml.zip",".//Choice[@key='2']",'Camden'))
 Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Candler/115487/313095/reports/detailxml.zip",".//Choice[@key='2']",'Candler'))
 Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Carroll/115488/312948/reports/detailxml.zip",".//Choice[@key='54']",'Carroll'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Catoosa/115489/313017/reports/detailxml.zip",".//Choice[@key='54']",'Catoosa'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Charlton/115490/313365/reports/detailxml.zip",".//Choice[@key='2']",'Charlton'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Chatham/115491/313201/reports/detailxml.zip",".//Choice[@key='2']",'Chatham'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Chattahoochee/115492/313403/reports/detailxml.zip",".//Choice[@key='54']",'Chattahoochee'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Chattooga/115493/313121/reports/detailxml.zip",".//Choice[@key='54']",'Chattooga'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Cherokee/115494/313291/reports/detailxml.zip",".//Choice[@key='54']",'Cherokee'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Clarke/115495/313043/reports/detailxml.zip",".//Choice[@key='2']",'Clarke'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Clay/115496/312762/reports/detailxml.zip",".//Choice[@key='2']",'Clay'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Clayton/115497/313014/reports/detailxml.zip",".//Choice[@key='54']",'Clayton'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Clinch/115498/312798/reports/detailxml.zip",".//Choice[@key='2']",'Clinch'))
+Warnock.append(get_data( "https://results.enr.clarityelections.com//GA/Cobb/115499/313474/reports/detailxml.zip",".//Choice[@key='2']",'Cobb'))
 
 
 
