@@ -30,7 +30,7 @@ def get_data(url,xpath,name):
     zf = ZipFile('detailxml.zip', 'r')
     zf.extractall()
     zf.close()
-
+    
     return get_candidate(xpath,name)
 
 def get_candidate(xpath,name):
@@ -62,7 +62,13 @@ def get_candidate(xpath,name):
     df.insert(0, "Counties", counties)
     df.insert(5, 'Total', df['Absentee by Mail Votes'].astype(int) + df['Election Day Votes'].astype(int)+df['Advance Voting Votes'].astype(int)+df['Provisional Votes'].astype(int))
     df.insert(0, "ID", name +" " +df['Counties'])
-
+    
+    reporting_precincts =reporting('.//Precincts')
+   
+    
+    df = df.merge(reporting_precincts,left_on="Counties",right_on="County")
+    df =df.drop(['County'], axis=1)
+    
     return df
 
 def safediv(x,y):
@@ -178,32 +184,43 @@ def calculate_shift(df_2022,df_2020):
      df_2022.total.insert(8, "Pct Shift",df_2022.total["Margin"]-df_2020.total["Margin"])
      df_2022.total.insert(9, "Turnout",df_2022.total["Total"]/df_2020.total["Total"])
 
+def reporting(xpath):
+    header=[]
+    pct_reporting=[]
+    
+    tree = etree.parse('detail.xml')
+    root = tree.getroot()
+    
+    for Counties in root.find(xpath):
+        header.append(Counties.attrib['name'])
+        pct_reporting.append(Counties.attrib['percentReporting'])
+    df2 = pd.DataFrame( pct_reporting,columns=['percentReporting'])
+
+    df = pd.DataFrame(header,columns=['County'])
+    df=df.join(df2, how='outer')
+    return df
+
 def Statmodels(Previous_race,Current_race,Previous_name,Current_name,Title,w):
     
     plt.title(Title)
     plt.xlabel(Previous_name)
     plt.ylabel(Current_name)
-    print(Previous_race)
-    plt.scatter(Previous_race[Previous_name],Current_race[Current_name],w)
-   
- 
-    x = Previous_race[Previous_name]
-    y = Current_race[Current_name]
-    z = w
-   
-    x=x.dropna()
-    y=y.dropna()
-    z=z.loc[z != 0]
     
-    print(x)
-    print(y)
-    print(z)
+    merged = Current_race.merge(Previous_race,on="County")
+    merged =  merged.loc[(Previous_race["Total"]!=0) & (Current_race["Total"]!=0)]
+    
+    x = merged[Previous_name]
+    y = merged[Current_name]
+    z = merged["Total_y"]/1000
+   
+    
+    plt.scatter(x,y,z)
 
     wls_model = sm.WLS(y,x,z)
     results = wls_model.fit()
     
     
-    plt.plot(x,results.fittedvalues)
+    plt.plot(x,results.fittedvalues,'-g')
     
     xpoint = pd.DataFrame(x, columns=['Warnock Pct'])
     ypoint = pd.DataFrame(results.fittedvalues, columns=['expected'])
@@ -219,6 +236,8 @@ def Statmodels(Previous_race,Current_race,Previous_name,Current_name,Title,w):
     plt.plot(x, y, '-r', label='y=x+1')
 
     plt.show()
+
+
 def get_candidate_precinct(candidate,xpath):
    
     candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Appling/115467/313148/reports/detailxml.zip",xpath,'Appling')) 
@@ -383,15 +402,27 @@ def get_candidate_precinct(candidate,xpath):
     candidate=pd.concat(candidate)
     return candidate
 
-Warnock = pd.read_csv("Data/Warnock.csv")
-Walker = pd.read_csv("Data/Walker.csv")
+#Warnock = pd.read_csv("Data/Warnock.csv")
+#Walker = pd.read_csv("Data/Walker.csv")
 Abrams = pd.read_csv("Data/Abrams.csv")
 Kemp = pd.read_csv("Data/Kemp.csv")
+
+Warnock =[]
+Walker=[]
+
+Warnock = get_candidate_precinct(Warnock,'.//Choice[@text="Raphael Warnock (I) (Dem)"]')
+Walker = get_candidate_precinct(Walker,'.//Choice[@text="Herschel Junior Walker (Rep)"]')
+
+reporting_precincts=Warnock.drop(['Counties','Absentee by Mail Votes','Advance Voting Votes', 'Election Day Votes', 'Provisional Votes',  'Total'], axis=1)
+
 
 Senate =assign_race(Warnock,Walker,"Warnock","Walker")
 Governor =assign_race(Abrams,Kemp,"Abrams","Kemp")
 calculate_shift(Governor,Senate)
 
+Governor.total=Governor.total.merge(reporting_precincts,left_on="County",right_on="ID")
+Governor.total=Governor.total.drop(['ID'], axis=1)
+print(Governor.total)
 write_to_excel(Governor,"Governor")
 
 Statmodels(Senate.total,Governor.total,"Warnock Pct","Abrams Pct","GA",Senate.total['Total']/1000)
