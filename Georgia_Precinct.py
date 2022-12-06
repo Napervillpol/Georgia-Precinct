@@ -24,12 +24,9 @@ def get_data(url,xpath,name):
 
     filename = url.split('/')[-1]  # this will take only -1 splitted part of the url
 
-    with open(filename, 'wb') as output_file:
-        output_file.write(r.content)
-    
-    zf = ZipFile('detailxml.zip', 'r')
-    zf.extractall()
-    zf.close()
+    zip = ZipFile('detailxml.zip')
+    zip.extractall()
+
     
     return get_candidate(xpath,name)
 
@@ -207,7 +204,7 @@ def Statmodels(Previous_race,Current_race,Previous_name,Current_name,Title,w):
     plt.ylabel(Current_name)
     
     merged = Current_race.merge(Previous_race,on="County")
-    merged =  merged.loc[(Previous_race["Total"]!=0) & (Current_race["Total"]!=0)]
+    merged =  merged.loc[(Previous_race["Total"]!=0) & (Current_race["Total"]!=0) & (Current_race["percentReporting"].astype(int)>2)]
     
     x = merged[Previous_name]
     y = merged[Current_name]
@@ -240,31 +237,31 @@ def Statmodels(Previous_race,Current_race,Previous_name,Current_name,Title,w):
 
 def get_candidate_precinct(candidate,xpath):
    
-    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Appling/115467/313148/reports/detailxml.zip",xpath,'Appling')) 
-    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Atkinson/115468/313060/reports/detailxml.zip",xpath,'Atkinson'))
-    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Bacon/115469/313083/reports/detailxml.zip",xpath,'Bacon'))
-    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Baker/115470/312544/reports/detailxml.zip",xpath,'Baker'))
-    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Baldwin/115471/313143/reports/detailxml.zip",xpath,'Baldwin'))
-    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Banks/115472/313336/reports/detailxml.zip",xpath,'Banks'))
-    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Barrow/115473/313176/reports/detailxml.zip",xpath,'Barrow'))
-    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Bartow/115474/312982/reports/detailxml.zip",xpath,'Bartow'))
-    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Ben_Hill/115475/313377/reports/detailxml.zip",xpath,'Ben Hill'))
-    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Berrien/115476/313071/reports/detailxml.zip",xpath,'Berrien'))
-    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Bibb/115477/313347/reports/detailxml.zip",xpath,'Bibb'))
-    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Bleckley/115478/312961/reports/detailxml.zip",xpath,'Bleckley'))
-    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Brantley/115479/313211/reports/detailxml.zip",xpath,'Brantley'))
-    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Brooks/115480/312999/reports/detailxml.zip",xpath,'Brooks'))
-    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Bryan/115481/313138/reports/detailxml.zip",xpath,'Bryan'))
-    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Bulloch/115482/313241/reports/detailxml.zip",xpath,'Bulloch'))
-    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Burke/115483/312983/reports/detailxml.zip",xpath,'Burke'))
-    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Butts/115484/313669/reports/detailxml.zip",xpath,'Butts'))
-    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Calhoun/115485/313024/reports/detailxml.zip",xpath,'Calhoun'))
-    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Camden/115486/313152/reports/detailxml.zip",xpath,'Camden'))
-    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Candler/115487/313095/reports/detailxml.zip",xpath,'Candler'))
-    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Carroll/115488/312948/reports/detailxml.zip",xpath,'Carroll'))
-    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Catoosa/115489/313017/reports/detailxml.zip",xpath,'Catoosa'))
-    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Charlton/115490/313365/reports/detailxml.zip",xpath,'Charlton'))
-    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Chatham/115491/313201/reports/detailxml.zip",xpath,'Chatham'))
+    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Appling/116566/314864/reports/detailxml.zip",xpath,'Appling')) 
+    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Atkinson/116567/314865/reports/detailxml.zip",xpath,'Atkinson'))
+    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Bacon/116568/314866/reports/detailxml.zip",xpath,'Bacon'))
+    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Baker/116569/314867/reports/detailxml.zip",xpath,'Baker'))
+    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Baldwin/116570/314868/reports/detailxml.zip",xpath,'Baldwin'))
+    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Banks/116571/314869/reports/detailxml.zip",xpath,'Banks'))
+    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Barrow/116572/314870/reports/detailxml.zip",xpath,'Barrow'))
+    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Bartow/116573/314871/reports/detailxml.zip",xpath,'Bartow'))
+    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Ben_Hill/116574/314872/reports/detailxml.zip",xpath,'Ben Hill'))
+    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Berrien/116575/314873/reports/detailxml.zip",xpath,'Berrien'))
+    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Bibb/116576/314875/reports/detailxml.zip",xpath,'Bibb'))
+    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Bleckley/116577/314876/reports/detailxml.zip",xpath,'Bleckley'))
+    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Brantley/116578/314877/reports/detailxml.zip",xpath,'Brantley'))
+    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Brooks/116579/314878/reports/detailxml.zip",xpath,'Brooks'))
+    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Bryan/116580/314879/reports/detailxml.zip",xpath,'Bryan'))
+    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Bulloch/116581/314880/reports/detailxml.zip",xpath,'Bulloch'))
+    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Burke/116582/315053/reports/detailxml.zip",xpath,'Burke'))
+    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Butts/116583/314882/reports/detailxml.zip",xpath,'Butts'))
+    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Calhoun/116584/314883/reports/detailxml.zip",xpath,'Calhoun'))
+    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Camden/116585/314884/reports/detailxml.zip",xpath,'Camden'))
+    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Candler/116586/314885/reports/detailxml.zip",xpath,'Candler'))
+    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Carroll/116587/315054/reports/detailxml.zip",xpath,'Carroll'))
+    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Catoosa/116588/314887/reports/detailxml.zip",xpath,'Catoosa'))
+    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Charlton/116589/314888/reports/detailxml.zip",xpath,'Charlton'))
+    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Chatham/116590/314889/reports/detailxml.zip",xpath,'Chatham'))
     candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Chattahoochee/115492/313403/reports/detailxml.zip",xpath,'Chattahoochee'))
     candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Chattooga/115493/313121/reports/detailxml.zip",xpath,'Chattooga'))
     candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Cherokee/115494/313291/reports/detailxml.zip",xpath,'Cherokee'))
@@ -402,8 +399,8 @@ def get_candidate_precinct(candidate,xpath):
     candidate=pd.concat(candidate)
     return candidate
 
-#Warnock = pd.read_csv("Data/Warnock.csv")
-#Walker = pd.read_csv("Data/Walker.csv")
+Warnock = pd.read_csv("Data/Warnock.csv")
+Walker = pd.read_csv("Data/Walker.csv")
 Abrams = pd.read_csv("Data/Abrams.csv")
 Kemp = pd.read_csv("Data/Kemp.csv")
 
@@ -420,9 +417,9 @@ Senate =assign_race(Warnock,Walker,"Warnock","Walker")
 Governor =assign_race(Abrams,Kemp,"Abrams","Kemp")
 calculate_shift(Governor,Senate)
 
-Governor.total=Governor.total.merge(reporting_precincts,left_on="County",right_on="ID")
-Governor.total=Governor.total.drop(['ID'], axis=1)
-print(Governor.total)
-write_to_excel(Governor,"Governor")
+#Governor.total=Governor.total.merge(reporting_precincts,left_on="County",right_on="ID")
+#Governor.total=Governor.total.drop(['ID'], axis=1)
 
-Statmodels(Senate.total,Governor.total,"Warnock Pct","Abrams Pct","GA",Senate.total['Total']/1000)
+#write_to_excel(Governor,"Governor")
+
+#Statmodels(Senate.total,Governor.total,"Warnock Pct","Abrams Pct","GA",Senate.total['Total']/1000)
