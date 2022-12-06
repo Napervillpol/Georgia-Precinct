@@ -395,31 +395,33 @@ def get_candidate_precinct(candidate,xpath):
     candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Wilcox/116721/315033/reports/detailxml.zip",xpath,'Wilcox'))
     candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Wilkes/116722/315034/reports/detailxml.zip",xpath,'Wilkes'))
     candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Wilkinson/116723/315035/reports/detailxml.zip",xpath,'Wilkenson'))
-    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Worth/116724/315036/reports/detailxml.zip",xpath,'Worth'))
+    candidate.append(get_data( "https://results.enr.clarityelections.com//GA/Worth/116724/315036/reports/detailxml.zip",xpath,'Worth'))   
+    
     candidate=pd.concat(candidate)
     return candidate
 
 Warnock = pd.read_csv("Data/Warnock.csv")
 Walker = pd.read_csv("Data/Walker.csv")
-Abrams = pd.read_csv("Data/Abrams.csv")
-Kemp = pd.read_csv("Data/Kemp.csv")
 
-Warnock =[]
-Walker=[]
 
-Warnock = get_candidate_precinct(Warnock,'.//Choice[@text="Raphael Warnock (I) (Dem)"]')
-Walker = get_candidate_precinct(Walker,'.//Choice[@text="Herschel Junior Walker (Rep)"]')
+Warnock_Runoff =[]
+Walker_Runoff=[]
 
-reporting_precincts=Warnock.drop(['Counties','Absentee by Mail Votes','Advance Voting Votes', 'Election Day Votes', 'Provisional Votes',  'Total'], axis=1)
+Warnock_Runoff = get_candidate_precinct(Warnock_Runoff,'.//Choice[@text="Raphael Warnock (I) (Dem)"]')
+Walker_Runoff = get_candidate_precinct(Walker_Runoff,'.//Choice[@text="Herschel Junior Walker (Rep)"]')
+
+
+
+reporting_precincts=Warnock_Runoff.drop(['Counties','Absentee by Mail Votes','Advance Voting Votes', 'Election Day Votes', 'Provisional Votes',  'Total'], axis=1)
 
 
 Senate =assign_race(Warnock,Walker,"Warnock","Walker")
-Governor =assign_race(Abrams,Kemp,"Abrams","Kemp")
-calculate_shift(Governor,Senate)
+Senate_Runoff =assign_race(Warnock_Runoff,Walker_Runoff,"Warnock","Walker")
+calculate_shift(Senate_Runoff,Senate)
 
-#Governor.total=Governor.total.merge(reporting_precincts,left_on="County",right_on="ID")
-#Governor.total=Governor.total.drop(['ID'], axis=1)
+Senate_Runoff.total=Senate_Runoff.total.merge(reporting_precincts,left_on="County",right_on="ID")
+Senate_Runoff.total=Senate_Runoff.total.drop(['ID'], axis=1)
 
-#write_to_excel(Governor,"Governor")
+write_to_excel(Senate_Runoff,"Senate_Runoff")
 
-#Statmodels(Senate.total,Governor.total,"Warnock Pct","Abrams Pct","GA",Senate.total['Total']/1000)
+Statmodels(Senate_Runoff.total,Senate.total,"Warnock R1 Pct","Warnock R2 Pct","GA",Senate.total['Total']/1000)
